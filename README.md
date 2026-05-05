@@ -77,21 +77,21 @@ The analysis uses one CSV dataset sourced from Kaggle:
 ### Visualizations
 
 #### Visualization 1 — Customer Service Calls vs Churn
-![Customer Service Calls vs Churn](images/chart2_service_calls_churn.png)
+![Customer Service Calls vs Churn](Images/chart2_service_calls_churn.png)
 
 Customers who called support **4 or more times** churn at over 40% — nearly three times the average rate of 14.5%. The churn rate rises sharply from call 3 onwards, suggesting that unresolved issues escalate quickly into a decision to leave. This makes customer service call count one of the most actionable predictors in the dataset.
 
 ---
 
 #### Visualization 2 — Total Day Minutes vs Churn
-![Total Day Minutes vs Churn](images/chart3_day_minutes_churn.png)
+![Total Day Minutes vs Churn](Images/chart3_day_minutes_churn.png)
 
 Churned customers have a median of **215 day minutes** compared to **178 minutes** for retained customers — a gap of 37 minutes per day. Since SyriaTel charges by the minute, heavier users accumulate higher bills, which appears to drive dissatisfaction and eventually churn.
 
 ---
 
 #### Visualization 3 — Plan Type vs Churn Rate
-![Plan Type vs Churn Rate](images/chart4_plan_churn.png)
+![Plan Type vs Churn Rate](Images/chart4_plan_churn.png)
 
 International plan subscribers churn at **42%** — nearly four times the overall average. In contrast, voice mail plan subscribers churn at just **8.7%**, well below average. This suggests the international plan may have pricing or quality issues, while the voice mail plan is associated with higher engagement and retention.
 
@@ -116,21 +116,21 @@ The **Tuned Decision Tree** was selected as the final model based on the highest
 ## Evaluation
 
 #### Model Comparison — Recall & F1-Score
-![Model Comparison](images/model_comparison.png)
+![Model Comparison](Images/model_comparison.png)
 
 The Tuned Decision Tree achieves the best F1-score (0.707) across all five models, confirming it as the strongest overall performer.
 
 ---
 
 #### ROC Curves — All Models
-![ROC Curves](images/roc_curves_comparison.png)
+![ROC Curves](Images/roc_curves_comparison.png)
 
 The Tuned Decision Tree has the highest AUC of **0.834**, meaning it is the best model at distinguishing churners from non-churners across all possible thresholds. All models sit well above the 0.5 random baseline.
 
 ---
 
 #### Feature Importances — Top Drivers of Churn
-![Feature Importances](images/feature_importances.png)
+![Feature Importances](Images/feature_importances.png)
 
 **Total day minutes (0.30)** is the single strongest predictor of churn. **Customer service calls (0.16)** ranks second, and **total eve minutes (0.14)** third — all consistent with the patterns identified during EDA.
 
@@ -153,8 +153,6 @@ Based on the analysis, SyriaTel should:
 1. **Collect richer data** — add actual monthly bill amounts, complaint categories, and contract tenure to strengthen model predictions
 2. **Retrain the model quarterly** — customer behaviour shifts over time and the model needs regular updates to stay accurate
 3. **Explore XGBoost** — evaluate gradient boosting for potential performance gains beyond the current F1 of 0.707
-
----
 
 
 
